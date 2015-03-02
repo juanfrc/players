@@ -1,0 +1,47 @@
+<%= form_for @player do |f| %>
+
+<% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@player.errors.count, "error") %> prohibited
+        this player from being saved:
+      </h2>
+      <ul>
+        <% @player.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </p>
+  
+  <p>
+    <%= f.label :points %><br>
+    <%= f.number_field :points %>
+  </p>
+
+  <p>
+    <%= f.select :active, [['Active', true], ['Inactive', false]] %>
+  </p>
+
+ <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to "Players' list", players_path %>

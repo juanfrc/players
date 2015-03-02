@@ -1,0 +1,11 @@
+<h1>Player's list</h1>
+
+<ul>
+	<% @players.each do |player| %>
+		<li><%= player.username %>
+			<%= link_to 'Edit', edit_player_path(player) %>
+			<%= link_to 'Delete', player_path(player), method: :delete %></li>
+	<% end %>
+</ul>
+
+<%= link_to "Create new player", new_player_path %>
