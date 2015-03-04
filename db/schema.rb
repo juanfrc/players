@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302164835) do
+ActiveRecord::Schema.define(version: 20150304155310) do
 
   create_table "players", force: true do |t|
-    t.string   "email"
-    t.string   "name"
-    t.string   "username"
-    t.integer  "points"
-    t.boolean  "active"
+    t.string   "email",                     null: false
+    t.string   "name",                      null: false
+    t.string   "username",                  null: false
+    t.integer  "points",                    null: false
+    t.boolean  "active",     default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
